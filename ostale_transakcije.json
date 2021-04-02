@@ -1,0 +1,20 @@
+[
+  {
+    "izvornaValuta": "USD",
+    "pocetniIznos": 100.0,
+    "krajnjiIznos": 84.9455,
+    "datumTransakcije": "Apr 2, 2021, 1:36:23 PM"
+  },
+  {
+    "izvornaValuta": "USD",
+    "pocetniIznos": 100.0,
+    "krajnjiIznos": 94.1896,
+    "datumTransakcije": "Apr 2, 2021, 1:36:23 PM"
+  },
+  {
+    "izvornaValuta": "USD",
+    "pocetniIznos": 100.0,
+    "krajnjiIznos": 125.345,
+    "datumTransakcije": "Apr 2, 2021, 1:36:23 PM"
+  }
+]

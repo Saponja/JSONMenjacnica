@@ -1,5 +1,6 @@
 package domen;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Transakcija {
@@ -45,6 +46,19 @@ public class Transakcija {
 		return "Transakcija [izvornaValuta=" + izvornaValuta + ", krajnjaValuta=" + krajnjaValuta + ", pocetniIznos="
 				+ pocetniIznos + ", krajnjiIznos=" + krajnjiIznos + ", datumTransakcije=" + datumTransakcije + "]";
 	}
+	public Transakcija(String izvornaValuta, double pocetniIznos, Date datumTransakcije) {
+		super();
+		this.izvornaValuta = izvornaValuta;
+		this.pocetniIznos = pocetniIznos;
+		this.datumTransakcije = datumTransakcije;
+	}
+	public Transakcija() {
+		super();
+	}
+	
+	
+	
+	
 	
 	
 

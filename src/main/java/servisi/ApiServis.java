@@ -15,17 +15,24 @@ import domen.Transakcija;
 public class ApiServis {
 	
 	public static final String BASE_URL = "http://api.currencylayer.com/";
-	public static final String ENDPOINT = "live";
 	public static final String ACCESS_KEY = "692254f4bc5786774ee24491df1b938a";
+	public static final String DATUM = "1998-12-05";
 	
-	public static HttpURLConnection get(Transakcija t) {
+	public static HttpURLConnection get(Transakcija t, String valuta) {
 		
 		try {
 			
 			//URL url = new URL(BASE_URL + ENDPOINT + "?access_key=" + ACCESS_KEY + "&from=" + t.getIzvornaValuta()+
-			//		"&to=" + t.getKrajnjaValuta() + "&amount=" + t.getPocetniIznos()); 
+			//		"&to=" + t.getKrajnjaValuta() + "&amount=" + t.getPocetniIznos());
 			
-			URL url = new URL(BASE_URL + ENDPOINT + "?access_key=" + ACCESS_KEY + "&source=" + t.getIzvornaValuta() + "&currencies=" + t.getKrajnjaValuta());
+			URL url;
+			
+			if(valuta != null) {
+				 url = new URL(BASE_URL + "live" + "?access_key=" + ACCESS_KEY + "&source=" + t.getIzvornaValuta() + "&currencies=" + t.getKrajnjaValuta());
+			}else {
+				 url = new URL(BASE_URL + "live" + "?access_key=" + ACCESS_KEY + "&date=" + DATUM + "&source=" + t.getIzvornaValuta());
+			}
+			
 			
 			HttpURLConnection con = (HttpURLConnection)url.openConnection();
 			

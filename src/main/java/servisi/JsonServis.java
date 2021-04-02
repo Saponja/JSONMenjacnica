@@ -11,11 +11,24 @@ public class JsonServis {
 	
 	
 	
-	public static void jsonUFajl(Transakcija t) {
+	public static void jsonUFajl(Transakcija t, String filename) {
 		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		
-		try(FileWriter file = new FileWriter("prva_transakcija.json")){
+		try(FileWriter file = new FileWriter(filename)){
+			
+			gson.toJson(t, file);
+			
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	public static void jsonNizUFajl(Transakcija[] t, String filename) {
+		
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		
+		try(FileWriter file = new FileWriter(filename)){
 			
 			gson.toJson(t, file);
 			

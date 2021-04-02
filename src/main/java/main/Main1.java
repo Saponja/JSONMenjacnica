@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Date;
 
 import com.google.gson.Gson;
@@ -27,15 +28,15 @@ public class Main1 {
 		t.setKrajnjaValuta("CAD");
 		t.setDatumTransakcije(new Date());
 
-		HttpURLConnection con = ApiServis.get(t);
+		HttpURLConnection con = ApiServis.get(t, t.getKrajnjaValuta());
 		
 		JsonObject res = ApiServis.responseToJson(con);
 		
 		double cad = res.get("quotes").getAsJsonObject().get("USDCAD").getAsDouble();
 		
-		TransakcijaServis.konvertuj(t, t.getPocetniIznos(), cad);
+		TransakcijaServis.konvertuj(t, cad);
 		
-		JsonServis.jsonUFajl(t);
+		JsonServis.jsonUFajl(t, "prva_transakcija.json");
 			
 			
 			
